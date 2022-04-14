@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Fitness Tracker</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -11,7 +11,70 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
+
     <body>
-      <h1>Fitness Tracker</h1>
+      <h1>Fitness Tracker</h1><br>
+
+      <section id="login">
+        <h3>Account</h3>
+        <div id="sign-up">
+          <p><strong>Sign Up</strong><br>
+          New here? Create an account to get started.</p>
+          <form id="sign-up-form">
+            <input name="credentials[email]" type="email" placeholder="Email"><br><br>
+            <input name="credentials[password]" type="password" placeholder="Password"><br><br>
+            <input name="credentials[password_confirmation]" type="password" placeholder="Confirm password"><br><br>
+            <button type="submit">Sign up</button>
+          </form><br>
+        </div>
+
+        <div id="sign-in">
+          <p><strong>Sign In</strong><br>
+          Have an account? Sign in below to start tracking!</p>
+          <form id="sign-in-form">
+            <input name="credentials[email]" type="email" placeholder="Email"><br><br>
+            <input name="credentials[password]" type="password" placeholder="Password"><br><br>
+            <button type="submit">Sign In</button>
+          </form><br>
+        </div>
+      </section>
+
+      <br>
+
+      <section id="add-workout-section">
+
+        <h3>Log Workout</h3><br>
+
+        <form id="add-workout">
+          <label for="name">Name:</label>
+          <input id="name" type="text" placeholder="name">
+          
+          <label for="date">Date:</label>
+          <input id="date" type="date" placeholder="date mm/dd/year">
+
+          <label for="type">Type:</label>
+          <select id="type" name="type">
+            <option value="strength">Strength</option>
+            <option value="cardio">Cardio</option>
+            <option value="yoga">Yoga</option>
+          </select><br><br>
+
+          <label id="exercises">Add Exercise(s)</label>
+          <input id="exercises" type="text" placeholder="exercise name">
+          <button>[+] Add Another Exercise</button>
+
+          <br><br>
+          <button>Log Workout</button>
+        </form>
+
+      </section>
+
+      <br><br>
+      <section id="my-workouts">
+        <h3>My Workouts</h3><br>
+        <button>View My Workouts</button><br><br>
+      </section>
+
     </body>
+
 </html>
