@@ -15,8 +15,10 @@
     <body>
       <h1>Fitness Tracker</h1><br>
 
-      <section id="login">
+      <section id="account-management">
         <h3>Account</h3>
+        <div id="auth-display"></div>
+
         <div id="sign-up">
           <p><strong>Sign Up</strong><br>
           New here? Create an account to get started.</p>
@@ -37,6 +39,23 @@
             <button type="submit">Sign In</button>
           </form><br>
         </div>
+
+        <div id="change-password">
+          <p><strong>Change Password</strong><br>
+          A combo of letters, numbers, and symbols is most secure.</p>
+          <form id="change-password-form">
+            <input name="passwords[old]" type="password" placeholder="Current password"><br><br>
+            <input name="passwords[new]" type="password" placeholder="New password"><br><br>
+            <button type="submit">Change Password</button>
+          </form><br>
+        </div>
+
+        <div id="sign-out">
+          <p><strong>Sign Out</strong><br>
+          All done? Sign out below.</p>
+          <button id="sign-out-button">Sign Out</button><br><br>
+        </div>
+
       </section>
 
       <br>
@@ -47,7 +66,7 @@
 
         <form id="add-workout">
           <label for="name">Name:</label>
-          <input id="name" type="text" placeholder="name">
+          <input id="name" type="text" placeholder="workout name">
           
           <label for="date">Date:</label>
           <input id="date" type="date" placeholder="date mm/dd/year">
@@ -64,7 +83,7 @@
           <button>[+] Add Another Exercise</button>
 
           <br><br>
-          <button>Log Workout</button>
+          <button type="submit">Log Workout</button>
         </form>
 
       </section>
