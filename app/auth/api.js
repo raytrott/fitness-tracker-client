@@ -1,10 +1,11 @@
 const store = require('../store.js')
 const config = require('../config.js')
+// config.apiUrl
 
 const signUp = function (data) {
     return $.ajax({
         method: 'POST',
-        url: config.apiUrl + '/sign-up',
+        url: 'http://localhost:4741' + '/sign-up',
         data
     })
 }
@@ -12,7 +13,7 @@ const signUp = function (data) {
 const signIn = function (data) {
     return $.ajax({
         method: 'POST',
-        url: config.apiUrl + '/sign-in',
+        url: 'http://localhost:4741' + '/sign-in',
         data
     })
 }
@@ -20,7 +21,7 @@ const signIn = function (data) {
 const changePassword = function (data) {
     return $.ajax({
         method: 'PATCH',
-        url: config.apiUrl + '/change-password',
+        url: 'http://localhost:4741' + '/change-password',
         headers: {
             Authorization: 'Bearer ' + store.user.token
         },
@@ -31,7 +32,7 @@ const changePassword = function (data) {
 const signOut = function () {
     return $.ajax({
         method: 'DELETE',
-        url: config.apiUrl + '/sign-out',
+        url: 'http://localhost:4741' + '/sign-out',
         headers: {
             Authorization: 'Bearer ' + store.user.token
         }

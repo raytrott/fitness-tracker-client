@@ -11,9 +11,9 @@ const onSignUpFailure = function () {
 
 const onSignInSuccess = function (response) {
     $('#auth-display').html('<p class="display-text">User sign in successful!</p>')
-    $('.display-text').fadeOut(5000)
     $('form').trigger('reset')
     store.user = response.user
+    console.log(store.user)
 }
 
 const onSignInFailure = function () {
@@ -22,7 +22,6 @@ const onSignInFailure = function () {
 
 const onChangePasswordSuccess = function () {
     $('#auth-display').html('<p class="display-text">Password changed successfully!</p>')
-    $('.display-text').fadeOut(5000)
     $('form').trigger('reset')
 }
 
@@ -32,7 +31,6 @@ const onChangePasswordFailure = function () {
 
 const onSignOutSuccess = function () {
     $('#auth-display').html('<p class="display-text">Sign out successful!</p>')
-    $('.display-text').fadeOut(5000)
     $('form').trigger('reset')
 }
 

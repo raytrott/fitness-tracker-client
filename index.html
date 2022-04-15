@@ -55,43 +55,44 @@
           All done? Sign out below.</p>
           <button id="sign-out-button">Sign Out</button><br><br>
         </div>
+      </section><br>
 
-      </section>
+      <section id="workouts">
+        <div id="add-workout-section">
+          <h3>Log Workout</h3><br>
+          <div id="workouts-display"></div>
 
-      <br>
+          <form id="add-workout-form">
+            <label for="workout-name">Name:</label>
+            <input name="workout[name]" id="workout-name" type="text" placeholder="workout name">
+            
+            <label for="workout-date">Date:</label>
+            <input name="workout[date]" id="workout-date" type="date" placeholder="date mm/dd/year">
 
-      <section id="add-workout-section">
+            <label for="workout-type">Type:</label>
+            <select name="workout[type]" name="workout-type" type="text">
+              <option value="strength">Strength</option>
+              <option value="cardio">Cardio</option>
+              <option value="yoga">Yoga</option>
+              <option value="other">Other</option>
+            </select><br><br>
 
-        <h3>Log Workout</h3><br>
+            <div id="workout-exercise-input">
+            <label for="workout-exercise">Add Exercise(s)</label>
+            <input name="workout[exercises]" id="workout-exercise" class="workout-exercise-field" type="text" placeholder="exercise name">
+            </div><br>
+            <span id="add-exercise">[+] Add Another Exercise</span><br><br>
 
-        <form id="add-workout">
-          <label for="name">Name:</label>
-          <input id="name" type="text" placeholder="workout name">
-          
-          <label for="date">Date:</label>
-          <input id="date" type="date" placeholder="date mm/dd/year">
+            <button type="submit">Log Workout</button>
+          </form>
+        </div><br><br>
 
-          <label for="type">Type:</label>
-          <select id="type" name="type">
-            <option value="strength">Strength</option>
-            <option value="cardio">Cardio</option>
-            <option value="yoga">Yoga</option>
-          </select><br><br>
-
-          <label id="exercises">Add Exercise(s)</label>
-          <input id="exercises" type="text" placeholder="exercise name">
-          <button>[+] Add Another Exercise</button>
-
-          <br><br>
-          <button type="submit">Log Workout</button>
-        </form>
-
-      </section>
-
-      <br><br>
-      <section id="my-workouts">
-        <h3>My Workouts</h3><br>
-        <button>View My Workouts</button><br><br>
+        <div id="my-workouts-section">
+          <h3>My Workouts</h3><br>
+          <button id="view-workouts">View My Workouts</button><br><br>
+        </div>
+        <div class="container" id="my-workouts-display">
+        </div>
       </section>
 
     </body>

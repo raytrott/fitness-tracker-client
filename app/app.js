@@ -1,5 +1,5 @@
 const authEvents = require('./auth/events.js')
-const trackerEvents = require('./tracker/events.js')
+const workoutEvents = require('./workouts/events.js')
 
 // Auth
 $(() => {
@@ -11,5 +11,9 @@ $(() => {
 
 // Fitness Tracker
 $(() => {
-  $('#add-workout').on('submit', trackerEvents.onAddWorkout)
+  $('#add-workout-form').on('submit', workoutEvents.onAddWorkout)
+  $('#add-exercise').on('click', workoutEvents.onAddExerciseField)
+  $('#view-workouts').on('click', workoutEvents.onViewWorkouts)
+  $('.update-workout').on('submit', workoutEvents.onUpdateWorkout)
+  $('.delete-workout').on('submit', workoutEvents.onDeleteWorkout)
 })
