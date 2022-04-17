@@ -39,9 +39,21 @@ function () {
         .catch(() => authUi.onSignOutFailure())
 }
 
+const onShowSignIn = function () {
+    $('#sign-in').show()
+    $('#sign-up').hide()
+}
+
+const onShowSignUp = function () {
+    $('#sign-up').show()
+    $('#sign-in').hide()
+}
+
 module.exports = {
     onSignUp,
     onSignIn,
     onChangePassword,
-    onSignOut
+    onSignOut,
+    onShowSignIn,
+    onShowSignUp
 }

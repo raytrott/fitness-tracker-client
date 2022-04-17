@@ -10,10 +10,14 @@ const onSignUpFailure = function () {
 }
 
 const onSignInSuccess = function (response) {
-    $('#auth-display').html('<p class="display-text">User sign in successful!</p>')
+    $('#auth-display').html('<br><p class="display-text"><i>User sign in successful!</i></p>')
+    $('.display-text').fadeOut(6000)
     $('form').trigger('reset')
     store.user = response.user
     console.log(store.user)
+    $('#workouts').show()
+    $('.nav-link').show()
+    $('#account-management').hide()
 }
 
 const onSignInFailure = function () {
@@ -21,8 +25,11 @@ const onSignInFailure = function () {
 }
 
 const onChangePasswordSuccess = function () {
-    $('#auth-display').html('<p class="display-text">Password changed successfully!</p>')
+    $('#auth-display').html('<br><p class="display-text"><i>Password changed successfully!</i></p>')
+    $('.display-text').fadeOut(6000)
     $('form').trigger('reset')
+    $('#account-management').hide()
+    $('#workouts').show()
 }
 
 const onChangePasswordFailure = function () {
@@ -31,7 +38,13 @@ const onChangePasswordFailure = function () {
 
 const onSignOutSuccess = function () {
     $('#auth-display').html('<p class="display-text">Sign out successful!</p>')
+    $('.display-text').fadeOut(6000)
     $('form').trigger('reset')
+    $('.nav-link').hide()
+    $('#account-management').show()
+    $('#sign-in').show()
+    $('#workouts').hide()
+    $('#change-password').hide()
 }
 
 const onSignOutFailure = function () {

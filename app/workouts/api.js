@@ -13,14 +13,23 @@ const addWorkout = function (data) {
     })
 }
 
-const viewWorkouts = function (data) {
+const viewWorkouts = function () {
     return $.ajax({
         method: 'GET',
         url: 'http://localhost:4741' + '/workouts',
         headers: {
             Authorization: 'Bearer ' + store.user.token
-        },
-        data
+        }
+    })
+}
+
+const showWorkout = function (workoutId) {
+    return $.ajax({
+        method: 'GET',
+        url: 'http://localhost:4741' + '/workouts/' + workoutId,
+        headers: {
+            Authorization: 'Bearer ' + store.user.token
+        }
     })
 }
 
@@ -49,6 +58,7 @@ const deleteWorkout = function () {
 module.exports = {
     addWorkout,
     viewWorkouts,
+    showWorkout,
     updateWorkout,
     deleteWorkout
 }
