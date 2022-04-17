@@ -17,21 +17,17 @@ const onAddWorkoutFailure = function () {
 
 const onViewWorkoutsSuccess = function (response) {
     console.log(response)
-
     let workoutsHtml = ''
-
     response.workouts.forEach((workout) => {
         workoutsHtml += `
             <div>
-            <p><strong>${workout.name}</strong></p>
-            <p>${workout.date}</p>
-            <p>ID # ${workout._id}</p>
-            
-            <button class="show-workout" data-id=${workout._id}>Show</button>
-            <div class="workout-details" data-id=${workout._id}></div>
-            <div class="update-workout"></div>
-            <button class="delete-workout" data-id=${workout._id}>Delete</button>
-            </div><br>
+            <p>__________</p><br>
+            <h4>${workout.name} - ${workout.date}</h4>
+            <p></p>ID #${workout._id}</p>
+            <p>Type: ${workout.type}</p>
+            <p>Exercise(s) performed:<br>
+            ${workout.exercises}</p>
+            </div>
         `
     })
     $('#my-workouts-display').html(workoutsHtml)
@@ -53,29 +49,49 @@ const onShowWorkoutSuccess = function (response) {
     // pull  workout.type   workout.exercises  from response
     // then display them
     // if dataset.id matches with workout id then add html to that div
-    
-
-    // let workoutHtml = ''
-
-    // response.workouts.forEach((workout) => {
-    //     workoutHtml += `
-    //         <div>
-    //         <h4>${workout.name}</h4>
-    //         <p>${workout.date}</p>
+    let workoutHtml = ''
+    response.workouts.forEach((workout) => {
+        workoutHtml += `
+            <div>
+            <h4>${workout.name}</h4>
+            <p>${workout.date}</p>
             
-    //         <button class="show-workout" data-id=${workout._id}>Show</button>
-    //         <div class="workout-details"></div>
-    //         <div class="update-workout"></div>
-    //         <button class="delete-workout" data-id=${workout._id}>Delete</button>
-    //         </div><br>
-    //     `
-    // })
-
-    // $('#my-workouts-display').html(workoutsHtml)
+            <button class="show-workout" data-id=${workout._id}>Show</button>
+            <div class="workout-details"></div>
+            <div class="update-workout"></div>
+            <button class="delete-workout" data-id=${workout._id}>Delete</button>
+            </div><br>
+        `
+    })
+    $('#my-workouts-display').html(workoutsHtml)
 }
 
 const onShowWorkoutFailure = function () {
     $('#workouts-display').html('<p>Error displaying workouts.</p>')
+}
+
+const onUpdateWorkoutSuccess = function (response) {
+    $('#update-workout-display').html(`
+        <p class="workout-display-text"><i>Workout updated.</i></p><br>
+    `)
+    console.log(response)
+    $('form').trigger('reset')
+}
+
+const onUpdateWorkoutFailure = function () {
+    $('#update-workout-display').html('<p>Error updating workout.</p>')
+}
+
+const onDeleteWorkoutSuccess = function (response) {
+    $('#delete-workout-display').html(`
+        <p class="workout-display-text"><i>Workout deleted. Click View My Workouts to see updated list.</i></p><br>
+    `).fadeIn(500)
+    console.log(response)
+    $('form').trigger('reset')
+}
+
+const onDeleteWorkoutFailure = function () {
+    $('#delete-workout-display').html('<p><i>Error deleting workout.</i></p>')
 }
 
 module.exports = {
@@ -85,5 +101,9 @@ module.exports = {
     onViewWorkoutsFailure,
     onShowWorkoutSuccess,
     onShowWorkoutFailure,
-    onShowDeleteListeners
+    onShowDeleteListeners,
+    onUpdateWorkoutSuccess,
+    onUpdateWorkoutFailure,
+    onDeleteWorkoutSuccess,
+    onDeleteWorkoutFailure
 }

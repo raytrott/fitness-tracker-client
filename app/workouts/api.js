@@ -33,10 +33,10 @@ const showWorkout = function (workoutId) {
     })
 }
 
-const updateWorkout = function (data) {
+const updateWorkout = function (data, id) {
     return $.ajax({
         method: 'PATCH',
-        url: 'http://localhost:4741' + '/workouts/' + store.workoutId,
+        url: 'http://localhost:4741' + '/workouts/' + id,
         headers: {
             Authorization: 'Bearer ' + store.user.token
         },
@@ -44,14 +44,13 @@ const updateWorkout = function (data) {
     })
 }
 
-const deleteWorkout = function () {
+const deleteWorkout = function (id) {
     return $.ajax({
         method: 'DELETE',
-        url: 'http://localhost:4741' + '/workouts/' + store.workoutId,
+        url: 'http://localhost:4741' + '/workouts/' + id,
         headers: {
             Authorization: 'Bearer ' + store.user.token
-        },
-        data
+        }
     })
 }
 

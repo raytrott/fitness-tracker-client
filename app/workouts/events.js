@@ -42,12 +42,25 @@ const onEditWorkout = function () {
 
 }
 
-const onUpdateWorkout = function () {
-
+const onUpdateWorkout = function (event) {
+    event.preventDefault()
+    const form = event.target
+    const data = getFormFields(form)
+    console.log(data)
+    
+    workoutApi.updateWorkout(data, data.workout.id)
+    .then((response) => workoutUi.onUpdateWorkoutSuccess(response))
+    .catch(() => workoutUi.onUpdateWorkoutFailure())
 }
 
-const onDeleteWorkout = function () {
-
+const onDeleteWorkout = function (event) {
+    event.preventDefault()
+    const form = event.target
+    const data = getFormFields(form)
+    console.log(data)
+    workoutApi.deleteWorkout(data.id)
+    .then((response) => workoutUi.onDeleteWorkoutSuccess(response))
+    .catch(() => workoutUi.onDeleteWorkoutFailure())
 }
 
 module.exports = {

@@ -1,7 +1,7 @@
 const authEvents = require('./auth/events.js')
 const workoutEvents = require('./workouts/events.js')
 
-// Auth
+// Authorization
 $(() => {
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
@@ -25,7 +25,7 @@ $(() => {
   })
 })
 
-// Fitness Tracker
+// Workouts
 $(() => {
   $('#add-workout-form').on('submit', workoutEvents.onAddWorkout)
   $('#add-exercise').on('click', workoutEvents.onAddExerciseField)
@@ -33,10 +33,11 @@ $(() => {
 
   $('.edit-workout').on('click', workoutEvents.onEditWorkout)
 
-  $('.update-workout-form').on('submit', workoutEvents.onUpdateWorkout)
+  $('#update-workout-form').on('submit', workoutEvents.onUpdateWorkout)
+  $('#delete-workout-form').on('submit', workoutEvents.onDeleteWorkout)
 })
 
-//Hide on start
+// Hide on start
 $(() => {
   $('#sign-in').hide()
   $('#change-password').hide()
