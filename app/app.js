@@ -30,9 +30,6 @@ $(() => {
   $('#add-workout-form').on('submit', workoutEvents.onAddWorkout)
   $('#add-exercise').on('click', workoutEvents.onAddExerciseField)
   $('#view-all-workouts').on('click', workoutEvents.onViewWorkouts)
-
-  $('.edit-workout').on('click', workoutEvents.onEditWorkout)
-
   $('#update-workout-form').on('submit', workoutEvents.onUpdateWorkout)
   $('#delete-workout-form').on('submit', workoutEvents.onDeleteWorkout)
 })
@@ -41,7 +38,6 @@ $(() => {
 $(() => {
   $('#sign-in').hide()
   $('#change-password').hide()
-  $('#sign-out').hide()
   $('#workouts').hide()
   $('.nav-link').hide()
 })

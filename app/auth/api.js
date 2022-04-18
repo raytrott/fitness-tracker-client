@@ -5,7 +5,7 @@ const config = require('../config.js')
 const signUp = function (data) {
     return $.ajax({
         method: 'POST',
-        url: 'http://localhost:4741' + '/sign-up',
+        url: config.apiUrl + '/sign-up',
         data
     })
 }
@@ -13,7 +13,7 @@ const signUp = function (data) {
 const signIn = function (data) {
     return $.ajax({
         method: 'POST',
-        url: 'http://localhost:4741' + '/sign-in',
+        url: config.apiUrl + '/sign-in',
         data
     })
 }
@@ -21,7 +21,7 @@ const signIn = function (data) {
 const changePassword = function (data) {
     return $.ajax({
         method: 'PATCH',
-        url: 'http://localhost:4741' + '/change-password',
+        url: config.apiUrl + '/change-password',
         headers: {
             Authorization: 'Bearer ' + store.user.token
         },
@@ -32,7 +32,7 @@ const changePassword = function (data) {
 const signOut = function () {
     return $.ajax({
         method: 'DELETE',
-        url: 'http://localhost:4741' + '/sign-out',
+        url: config.apiUrl + '/sign-out',
         headers: {
             Authorization: 'Bearer ' + store.user.token
         }

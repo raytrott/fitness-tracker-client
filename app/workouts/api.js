@@ -1,11 +1,10 @@
 const store = require('../store.js')
 const config = require('../config.js')
-// config.apiUrl
 
 const addWorkout = function (data) {
     return $.ajax({
         method: 'POST',
-        url: 'http://localhost:4741' + '/workouts',
+        url: config.apiUrl + '/workouts',
         headers: {
             Authorization: 'Bearer ' + store.user.token
         },
@@ -16,7 +15,7 @@ const addWorkout = function (data) {
 const viewWorkouts = function () {
     return $.ajax({
         method: 'GET',
-        url: 'http://localhost:4741' + '/workouts',
+        url: config.apiUrl + '/workouts',
         headers: {
             Authorization: 'Bearer ' + store.user.token
         }
@@ -26,7 +25,7 @@ const viewWorkouts = function () {
 const showWorkout = function (workoutId) {
     return $.ajax({
         method: 'GET',
-        url: 'http://localhost:4741' + '/workouts/' + workoutId,
+        url: config.apiUrl + '/workouts/' + workoutId,
         headers: {
             Authorization: 'Bearer ' + store.user.token
         }
@@ -36,7 +35,7 @@ const showWorkout = function (workoutId) {
 const updateWorkout = function (data, id) {
     return $.ajax({
         method: 'PATCH',
-        url: 'http://localhost:4741' + '/workouts/' + id,
+        url: config.apiUrl + '/workouts/' + id,
         headers: {
             Authorization: 'Bearer ' + store.user.token
         },
@@ -47,7 +46,7 @@ const updateWorkout = function (data, id) {
 const deleteWorkout = function (id) {
     return $.ajax({
         method: 'DELETE',
-        url: 'http://localhost:4741' + '/workouts/' + id,
+        url: config.apiUrl + '/workouts/' + id,
         headers: {
             Authorization: 'Bearer ' + store.user.token
         }
