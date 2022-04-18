@@ -1,19 +1,20 @@
-# Fitness Tracker
+# PeakFit - Track your workouts, reach peak fitness!
 
-## Introduction
+This is the frontend repo for my full stack fitness tracker application, PeakFit! With PeakFit, one can log their workout by date, type, and exercises performed.
 
-This is the frontend repo for my full stack Fitness Tracker application.
+For this full-stack project assignment from General Assembly, I decided to create a fitness tracker. In my personal life, not only do I love staying active, but I'm especially passionate about tracking my workouts so that I have metrics to assess my performance and can continue to progress toward my goals over time. This app is an extension of that passion and I hope to continue developing and expanding its features in the future.
+
+To visit the deployed app online, [click here](https://raytrott.github.io/fitness-tracker-client/).
+
+To view the backend API repo, [click here](https://github.com/raytrott/fitness-tracker-api).
 
 ## Planning
 
-#### Wireframe & Entity Relationship Diagram (ERD)
+### Wireframe & Entity Relationship Diagram (ERD)
 
-In the planning of this process, I created a wireframe and ERD which can be viewed [here](https://i.imgur.com/ZVwXAfG.jpg).
+In the planning of this application, I created a wireframe and ERD which can be viewed [here](https://i.imgur.com/ZVwXAfG.jpg).
 
-#### User Stories
-
-Some user stories for this project:
-
+### User Stories
 - As a user, I want to create an account.
 - As a user, I want to log into my account.
 - As a user, I want to change my password while signed in.
@@ -22,6 +23,19 @@ Some user stories for this project:
 - As a user, I want to view my logged workouts.
 - As a user, I want to edit my existing logged workout.
 - As a user, I want to delete my logged workout.
+
+### Technologies Used
+
+Frontend:
+- jQuery
+- HTML/CSS
+- Bootstrap
+- JavaScript
+
+Backend:
+- Express.js
+- MongoDB
+- Mongoose
 
 ## About Me
 
