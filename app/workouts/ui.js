@@ -20,7 +20,8 @@ const onViewWorkoutsSuccess = function (response) {
         workoutsHtml += `
             <div>
             <p>__________</p><br>
-            <h4>${workout.name} - ${workout.date}</h4>
+            <p>${workout.date.substring(0,10)}</p>
+            <h4>${workout.name}</h4>
             <p>ID #${workout._id}</p>
             <p>Type: ${workout.type}</p>
             <p>Exercise(s) performed:<br>
