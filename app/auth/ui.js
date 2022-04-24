@@ -44,6 +44,7 @@ const onSignOutSuccess = function () {
     $('#workouts').hide()
     $('#change-password').hide()
     $('.nav-link').hide()
+    $('#my-workouts-display').empty()
 }
 
 const onSignOutFailure = function () {

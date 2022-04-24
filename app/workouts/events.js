@@ -6,6 +6,7 @@ const onAddWorkout = function (event) {
     event.preventDefault()
     const form = event.target
     const data = getFormFields(form)
+    // console.log(data)
     workoutApi.addWorkout(data)
     .then((response) => workoutUi.onAddWorkoutSuccess(response))
     .catch(() => workoutUi.onAddWorkoutFailure())
