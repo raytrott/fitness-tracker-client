@@ -80,10 +80,10 @@
           <h3>Log Workout</h3><br>
           <div id="add-workout-display"></div>
           <form id="add-workout-form">
-            <label for="workout-name">Name:</label>
-            <input name="workout[name]" id="workout-name" type="text" placeholder="workout name">
+            <label for="workout-name">Workout Name:</label>
+            <input name="workout[name]" id="workout-name" type="text" placeholder="Enter name"><br><br>
             <label for="workout-date">Date:</label>
-            <input name="workout[date]" id="workout-date" type="date" placeholder="date mm/dd/year">
+            <input name="workout[date]" id="workout-date" type="date" placeholder="date mm/dd/year"><br><br>
             <label for="workout-type">Type:</label>
             <select name="workout[type]" name="workout-type" type="text">
               <option value="strength">Strength</option>
@@ -92,10 +92,11 @@
               <option value="other">Other</option>
             </select><br><br>
             <div id="workout-exercise-input">
-            <label for="workout-exercise">Add Exercise(s)</label>
-            <input name="workout[exercises]" id="workout-exercise" class="workout-exercise-field" type="text" placeholder="exercise name">
+            <label for="workout-exercise">Exercises Performed<br>(e.g. "Bench Press, Deadlift, Squat")</label><br><br>
+            <input name="workout[exercises]" id="workout-exercise" class="workout-exercise-field" type="text" placeholder="Add exercise(s)">
+            <!-- <input name="workout[exercises][exercise1]" id="update-workout-exercise1" class="workout-exercise-field" type="text" placeholder="exercise name"> -->
+            <!-- <span id="add-exercise">[+] Add Another Exercise</span><br><br> -->
             </div><br>
-            <span id="add-exercise">[+] Add Another Exercise</span><br><br>
             <button type="submit">Log Workout</button><br><br>
           </form>
         </div><br>
@@ -104,12 +105,12 @@
           <h3>Update Workout</h3><br>
           <div id="update-workout-display"></div>
           <form id="update-workout-form">
-            <label for="update-workout-id">ID:</label>
-            <input name="workout[id]" id="update-workout-id" type="text" placeholder="workout ID"><br><br>
-            <label for="update-workout-name">Name:</label>
-            <input name="workout[name]" id="update-workout-name" type="text" placeholder="workout name">
+            <label for="update-workout-id">Workout ID:</label>
+            <input name="workout[id]" id="update-workout-id" type="text" placeholder="Enter ID number"><br><br>
+            <label for="update-workout-name">Workout Name:</label>
+            <input name="workout[name]" id="update-workout-name" type="text" placeholder="Enter name"><br><br>
             <label for="update-workout-date">Date:</label>
-            <input name="workout[date]" id="update-workout-date" type="date" placeholder="date mm/dd/year">
+            <input name="workout[date]" id="update-workout-date" type="date" placeholder="date mm/dd/year"><br><br>
             <label for="update-workout-type">Type:</label>
             <select name="workout[type]" name="update-workout-type" type="text">
               <option value="strength">Strength</option>
@@ -118,10 +119,10 @@
               <option value="other">Other</option>
             </select><br><br>
             <div id="update-workout-exercise-input">
-            <label for="update-workout-exercise">Add Exercise(s)</label>
-            <input name="workout[exercises]" id="update-workout-exercise" class="workout-exercise-field" type="text" placeholder="exercise name">
+            <label for="update-workout-exercise">Exercises Performed<br>(e.g. "Bench Press, Deadlift, Squat")</label><br><br>
+            <input name="workout[exercises]" id="update-workout-exercise" class="workout-exercise-field" type="text" placeholder="Add exercise(s)">
+            <!-- <span id="update-add-exercise">[+] Add Another Exercise</span><br><br> -->
             </div><br>
-            <span id="update-add-exercise">[+] Add Another Exercise</span><br><br>
             <button type="submit">Update Workout</button><br><br>
           </form>
         </div><br>
@@ -130,8 +131,8 @@
           <h3>Delete Workout</h3><br>
           <div id="delete-workout-display"></div>
           <form id="delete-workout-form">
-            <label for="workout-id">Workout ID:</label>
-            <input name="id" id="workout-id" type="text" placeholder="workout ID #"><br><br>
+            <label for="workout-id">Enter ID number of workout to be deleted:</label><br><br>
+            <input name="id" id="workout-id" type="text" placeholder="Workout ID number"><br><br>
             <button type="submit">Delete Workout</button><br><br>
           </form>
         </div><br>
