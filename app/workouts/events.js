@@ -6,9 +6,10 @@ const onAddWorkout = function (event) {
     event.preventDefault()
     const form = event.target
     const data = getFormFields(form)
-    // console.log(data)
     workoutApi.addWorkout(data)
-    .then((response) => workoutUi.onAddWorkoutSuccess(response))
+    .then(() => workoutApi.viewWorkouts())
+    .then((response) => workoutUi.onViewWorkoutsSuccess(response))
+    .then(() => workoutUi.onAddWorkoutSuccess())
     .catch(() => workoutUi.onAddWorkoutFailure())
 }
 
@@ -29,16 +30,26 @@ const onUpdateWorkout = function (event) {
     event.preventDefault()
     const form = event.target
     const data = getFormFields(form)
-    workoutApi.updateWorkout(data, data.workout.id)
-    .then(() => workoutUi.onUpdateWorkoutSuccess())
-    .catch(() => workoutUi.onUpdateWorkoutFailure())
+    const workoutId = data.workout.id
+    workoutApi.updateWorkout(data, workoutId)
+    .then(() => workoutApi.viewWorkouts())
+    .then((response) => workoutUi.onViewWorkoutsSuccess(response))
+    .then(() => workoutUi.onUpdateWorkoutSuccess(workoutId))
+    .catch(() => workoutUi.onUpdateWorkoutFailure(workoutId))
 }
 
-const onDeleteWorkout = function (event) {
-    event.preventDefault()
-    const form = event.target
-    const data = getFormFields(form)
-    workoutApi.deleteWorkout(data.id)
+const onEditWorkoutButton = function (event) {
+    const workoutId = $(event.target).data('id')
+    $('#form-' + workoutId).show()
+    $('#workout-' + workoutId).hide()
+    $('#edit-button-' + workoutId).hide()
+}
+
+const onDeleteWorkoutButton = function (event) {
+    const workoutId = $(event.target).data('id')
+    workoutApi.deleteWorkout(workoutId)
+    .then(() => workoutApi.viewWorkouts())
+    .then((response) => workoutUi.onViewWorkoutsSuccess(response))
     .then(() => workoutUi.onDeleteWorkoutSuccess())
     .catch(() => workoutUi.onDeleteWorkoutFailure())
 }
@@ -48,5 +59,6 @@ module.exports = {
     onAddExerciseField,
     onViewWorkouts,
     onUpdateWorkout,
-    onDeleteWorkout
+    onEditWorkoutButton,
+    onDeleteWorkoutButton
 }

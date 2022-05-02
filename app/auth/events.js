@@ -19,6 +19,7 @@ function (event) {
     const data = getFormFields(form)
     authApi.signIn(data)
         .then((response) => authUi.onSignInSuccess(response))
+        // .then index workouts
         .catch(() => authUi.onSignInFailure())
 }
 

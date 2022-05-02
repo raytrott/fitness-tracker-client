@@ -1,11 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
 
-// nav {
-//     background-color: black;
-//     color: white;
-//     margin-left: auto;
-// }
-
 #app-title {
     font-family: 'Fredoka One', cursive;
 }
@@ -95,6 +89,18 @@ body {
 
 #delete-workout-section {
     background: rgba(black, 0.7);
+    width: 800px;
+    margin: auto;
+}
+
+.success {
+    background: rgba(0, 222, 0, 1);
+    width: 800px;
+    margin: auto;
+}
+
+.failure {
+    background: rgba(255, 0, 0, 1);
     width: 800px;
     margin: auto;
 }

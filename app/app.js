@@ -30,8 +30,9 @@ $(() => {
   $('#add-workout-form').on('submit', workoutEvents.onAddWorkout)
   $('#add-exercise').on('click', workoutEvents.onAddExerciseField)
   $('#view-all-workouts').on('click', workoutEvents.onViewWorkouts)
-  $('#update-workout-form').on('submit', workoutEvents.onUpdateWorkout)
-  $('#delete-workout-form').on('submit', workoutEvents.onDeleteWorkout)
+  $('#my-workouts-display').on('submit', '.update-workout-form', workoutEvents.onUpdateWorkout)
+  $('#my-workouts-display').on('click', '.delete-workout-button', workoutEvents.onDeleteWorkoutButton)
+  $('#my-workouts-display').on('click', '.edit-workout-button', workoutEvents.onEditWorkoutButton)
 })
 
 // Hide on start

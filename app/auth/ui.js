@@ -1,17 +1,17 @@
 const store = require('../store.js')
 
 const onSignUpSuccess = function () {
-    $('#auth-display').html('<p>User sign up successful! User not signed in, please make sure to do so before proceeding.</p>')
+    $('#auth-display').html('<p class="success">User sign up successful! User not signed in, please make sure to do so before proceeding.</p>')
     $('form').trigger('reset')
 }
 
 const onSignUpFailure = function () {
-    $('#auth-display').html('<p>Error when signing up</p>')
+    $('#auth-display').html('<p class="failure">Error when signing up</p>')
 }
 
 const onSignInSuccess = function (response) {
     store.user = response.user
-    $('#auth-display').html('<br><p class="display-text"><i>User sign in successful!</i></p>')
+    $('#auth-display').html('<br><p class="display-text success"><i>User sign in successful!</i></p>')
     $('.display-text').fadeOut(6000)
     $('form').trigger('reset')
     $('#workouts').show()
@@ -20,11 +20,11 @@ const onSignInSuccess = function (response) {
 }
 
 const onSignInFailure = function () {
-    $('#auth-display').html('<p>Error signing in.</p>')
+    $('#auth-display').html('<p class="failure">Error signing in.</p>')
 }
 
 const onChangePasswordSuccess = function () {
-    $('#auth-display').html('<br><p class="display-text"><i>Password changed successfully!</i></p>')
+    $('#auth-display').html('<br><p class="display-text success"><i>Password changed successfully!</i></p>')
     $('.display-text').fadeOut(6000)
     $('form').trigger('reset')
     $('#account-management').hide()
@@ -32,11 +32,11 @@ const onChangePasswordSuccess = function () {
 }
 
 const onChangePasswordFailure = function () {
-    $('#auth-display').html('<p>Error changing password.</p>')
+    $('#auth-display').html('<p class="failure">Error changing password.</p>')
 }
 
 const onSignOutSuccess = function () {
-    $('#auth-display').html('<p class="display-text">Sign out successful!</p>')
+    $('#auth-display').html('<p class="display-text success">Sign out successful!</p>')
     $('.display-text').fadeOut(6000)
     $('form').trigger('reset')
     $('#account-management').show()
@@ -48,7 +48,7 @@ const onSignOutSuccess = function () {
 }
 
 const onSignOutFailure = function () {
-    $('#auth-display').html('<p>Error signing out.</p>')
+    $('#auth-display').html('<p class="failure">Error signing out.</p>')
 }
 
 module.exports = {
