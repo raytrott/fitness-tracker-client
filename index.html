@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>peakFit</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fredoka:wght@400&display=swap');
+        </style>
+    </head>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand">peakFit</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item active">
+            <a class="nav-link" id="change-password-link">Change Password</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="sign-out-link">Sign Out</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <body>
+      <section id="page-top">
+        <br><br><h1 id="app-title">peakFit</h1><br>
+        <h3>Track your progress, reach peak fitness!</h3>
+        <div id="auth-display"></div><br>
+      </section><br>
+
+      <section id="account-management"><br>
+        <div id="sign-up"><br>
+          <h3>Sign Up</strong></h3><br>
+          <form id="sign-up-form">
+            <input name="credentials[email]" type="email" placeholder="Email"><br><br>
+            <input name="credentials[password]" type="password" placeholder="Password"><br><br>
+            <input name="credentials[password_confirmation]" type="password" placeholder="Confirm password"><br><br>
+            <button type="submit">Sign up</button>
+          </form><br>
+          <p id="sign-in-link">Already have an account? Click here to sign in.</p><br>
+        </div>
+
+        <div id="sign-in"><br>
+          <h3>Sign In</h3><br>
+          <form id="sign-in-form">
+            <input name="credentials[email]" type="email" placeholder="Email"><br><br>
+            <input name="credentials[password]" type="password" placeholder="Password"><br><br>
+            <button type="submit">Sign In</button>
+          </form><br>
+          <p id="sign-up-link">Don't have an account? Click here to sign up!</p><br>
+        </div>
+
+        <div id="change-password"><br>
+          <p><strong>Change Password</strong><br>
+          A combo of letters, numbers, and symbols is most secure.</p>
+          <form id="change-password-form">
+            <input name="passwords[old]" type="password" placeholder="Current password"><br><br>
+            <input name="passwords[new]" type="password" placeholder="New password"><br><br>
+            <button type="submit">Change Password</button>
+          </form><br>
+          <p id="return-link">Return to Workouts</p><br>
+        </div>
+      </section>
+
+      <section id="workouts">
+        <div id="add-workout-section"><br>
+          <h3>Log Workout</h3><br>
+          <div id="add-workout-display"></div>
+          <form id="add-workout-form">
+            <label for="workout-name">Workout Name:</label>
+            <input name="workout[name]" id="workout-name" type="text" placeholder="Enter name"><br><br>
+            <label for="workout-date">Date:</label>
+            <input name="workout[date]" id="workout-date" type="date" placeholder="date mm/dd/year"><br><br>
+            <label for="workout-type">Type:</label>
+            <select name="workout[type]" name="workout-type" type="text">
+              <option value="strength">Strength</option>
+              <option value="cardio">Cardio</option>
+              <option value="yoga">Yoga</option>
+              <option value="other">Other</option>
+            </select><br><br>
+            <div id="workout-exercise-input">
+            <label for="workout-exercise">Exercises Performed<br>(e.g. "Bench Press, Deadlift, Squat")</label><br><br>
+            <input name="workout[exercises]" id="workout-exercise" class="workout-exercise-field" type="text" placeholder="Add exercise(s)">
+            <!-- <input name="workout[exercises][exercise1]" id="update-workout-exercise1" class="workout-exercise-field" type="text" placeholder="exercise name"> -->
+            <!-- <span id="add-exercise">[+] Add Another Exercise</span><br><br> -->
+            </div><br>
+            <button type="submit">Log Workout</button><br><br>
+          </form>
+        </div><br>
+
+        <div class="my-workouts-section"><br>
+          <h3>My Workouts</h3><br>
+          <button id="view-all-workouts">View My Workouts</button><br><br>
+        </div>
+        <div id="my-workouts-display">
+        </div>
+      </section>
+
+    </body>
+
+</html>

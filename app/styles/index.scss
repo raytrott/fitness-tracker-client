@@ -1,0 +1,106 @@
+@import '~bootstrap/scss/bootstrap';
+
+#app-title {
+    font-family: 'Fredoka One', cursive;
+}
+
+body {
+    text-align: center;
+    color: white;
+    background-image: url("https://i.imgur.com/leN1PbF.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    font-family: 'Fredoka', sans-serif;
+}
+
+#sign-in-link:hover {
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+#sign-up-link:hover {
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+#return-link:hover {
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+#add-exercise:hover {
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+#my-workouts-display {
+    display: grid;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 200px;
+}
+
+#page-top {
+    background: rgba(black, 0.7);
+    width: 800px;
+    margin: auto;
+}
+
+#account-management {
+    background: rgba(black, 0.7);
+    width: 800px;
+    margin: auto;
+}
+
+#add-workout-section {
+    background: rgba(black, 0.7);
+    width: 800px;
+    margin: auto;
+}
+
+.my-workouts-section {
+    background: rgba(black, 0.7);
+    width: 800px;
+    margin: auto;
+}
+
+#my-workouts-display {
+    background: rgba(black, 0.7);
+    width: 800px;
+    margin: auto;
+}
+
+#update-workout-section {
+    background: rgba(black, 0.7);
+    width: 800px;
+    margin: auto;
+}
+
+#delete-workout-section {
+    background: rgba(black, 0.7);
+    width: 800px;
+    margin: auto;
+}
+
+.success {
+    background: rgba(0, 222, 0, 1);
+    width: 800px;
+    margin: auto;
+}
+
+.failure {
+    background: rgba(255, 0, 0, 1);
+    width: 800px;
+    margin: auto;
+}
